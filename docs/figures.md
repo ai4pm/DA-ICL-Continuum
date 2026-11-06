@@ -1,13 +1,13 @@
 # Manuscript figure catalogue
 
-The files below are byte-for-byte copies of the images referenced by the camera-ready manuscript. They are canonical visual references, not outputs that the repository silently overwrites. Verify them with:
+The seven panels below are byte-for-byte copies of Figures 1--4 referenced by the camera-ready manuscript. They are canonical visual references, not outputs that the repository silently overwrites. Verify them with:
 
 ```bash
 cd figures/manuscript
 sha256sum -c SHA256SUMS
 ```
 
-Newly generated synthetic figures are written beneath `results/<experiment>/figures/`. TCGA aggregate tables in `data/figure_data/` contain no patient identifiers or patient-level records.
+Newly generated synthetic figures are written beneath `results/<experiment>/figures/`. The TCGA aggregate table in `data/figure_data/` contains no patient identifiers or patient-level records.
 
 ## Figure 1: framework
 
@@ -54,21 +54,4 @@ Original caption: “Run-level AUROC distributions of DA-ICL for ancestry-contin
 - Methods: DA-ICL with continuum KNN100+DACE, and ancestry-discrete elastic net, random forest, and XGBoost.
 - Population/tasks: AFR test patients, 18 combinations of BRCA/KIRC/UCEC, OS/PFI, and mRNA/microRNA/methylation.
 - Metric: higher AUROC is better; points summarize split/run-level task performance, not individual patients.
-- Source: `data/figure_data/tcga_core_methods_run_level_auroc.csv` when packaged and `tcga_icl_method_auroc_summary.csv` for the ICL task summary. The plotting entry point is `scripts/plot_tcga_aggregate_figures.py`.
-
-### Figure 5: three task-specific genetic-distance examples
-
-Original caption: “Negative log-likelihoods (NLLs; top) and AUROCs (bottom) of DA-ICL under the ancestry-continuum setting and XGBoost under the ancestry-discrete setting. DA-ICL maintains relatively stable performance with increasing genetic distance, whereas XGBoost degrades more rapidly, with increasing NLL and decreasing AUROC.”
-
-All panels evaluate AFR test patients as distance from the AFR centroid increases. DA-ICL uses a combined-pool genetic KNN100 context with DACE; XGBoost is ancestry-discrete. Higher AUROC and lower NLL are better.
-
-| Manuscript position | Task | File |
-|---|---|---|
-| Top left | BRCA methylation PFI, NLL | [`tcga/tcga_BRCA_Methylation_PFI_fold0_afr_centroid_distance_binned_nll_da_vs_xgboost_min.png`](../figures/manuscript/tcga/tcga_BRCA_Methylation_PFI_fold0_afr_centroid_distance_binned_nll_da_vs_xgboost_min.png) |
-| Top center | KIRC microRNA OS, NLL | [`tcga/tcga_KIRC_MicroRNA_OS_fold0_afr_centroid_distance_binned_nll_da_vs_xgboost_min.png`](../figures/manuscript/tcga/tcga_KIRC_MicroRNA_OS_fold0_afr_centroid_distance_binned_nll_da_vs_xgboost_min.png) |
-| Top right | UCEC microRNA OS, NLL | [`tcga/tcga_UCEC_MicroRNA_OS_fold0_afr_centroid_distance_binned_nll_da_vs_xgboost_min.png`](../figures/manuscript/tcga/tcga_UCEC_MicroRNA_OS_fold0_afr_centroid_distance_binned_nll_da_vs_xgboost_min.png) |
-| Bottom left | BRCA methylation PFI, AUROC | [`tcga/tcga_BRCA_Methylation_PFI_fold0_afr_centroid_distance_binned_auroc_da_vs_xgboost_min.png`](../figures/manuscript/tcga/tcga_BRCA_Methylation_PFI_fold0_afr_centroid_distance_binned_auroc_da_vs_xgboost_min.png) |
-| Bottom center | KIRC microRNA OS, AUROC | [`tcga/tcga_KIRC_MicroRNA_OS_fold0_afr_centroid_distance_binned_auroc_da_vs_xgboost_min.png`](../figures/manuscript/tcga/tcga_KIRC_MicroRNA_OS_fold0_afr_centroid_distance_binned_auroc_da_vs_xgboost_min.png) |
-| Bottom right | UCEC microRNA OS, AUROC | [`tcga/tcga_UCEC_MicroRNA_OS_fold0_afr_centroid_distance_binned_auroc_da_vs_xgboost_min.png`](../figures/manuscript/tcga/tcga_UCEC_MicroRNA_OS_fold0_afr_centroid_distance_binned_auroc_da_vs_xgboost_min.png) |
-
-The corresponding aggregate sources are `data/figure_data/tcga_afr_distance_auroc_summary.csv` and `tcga_afr_distance_nll_summary.csv`. `scripts/plot_tcga_aggregate_figures.py` filters these sources by task and metric. Because individual TCGA records cannot be redistributed, the source summaries can regenerate the scientific curves but need not reproduce every stylistic pixel in the canonical images.
+- Source: `data/figure_data/tcga_core_methods_run_level_auroc.csv`. The plotting entry point is `scripts/plot_tcga_aggregate_figures.py`.

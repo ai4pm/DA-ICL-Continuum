@@ -12,6 +12,5 @@ Approximate observed/planning ranges:
 | Synthetic smoke config | 8 CPU cores | 1–3 minutes |
 | One 30-replicate synthetic sweep point | 8 CPU cores | 3–10 minutes |
 | Full serial synthetic paper sweep | 8 CPU cores | several hours |
-| One TCGA task/seed | H100 or V100S | tens of minutes, workload dependent |
 
 Record `nvidia-smi`, package versions, checkpoint path/hash, estimator parameters, task name, split seed, wall time, and `last_context_report_` for each authorized run.

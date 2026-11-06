@@ -23,7 +23,3 @@ The API accepts NumPy arrays and pandas DataFrames. DataFrame indices are not us
 
 TCGA open-access molecular data can be obtained from the [NCI Genomic Data Commons](https://portal.gdc.cancer.gov/). TCGA controlled-access germline genotypes require dbGaP authorization. Investigators must apply for the relevant study through dbGaP, obtain institutional approval when required, and process the files only in an approved secure environment. This repository neither redistributes nor automates retrieval of controlled-access data.
 
-## Optional NPZ
-
-For command-line scheduling only, store the same arrays in a compressed NumPy archive. Required keys depend on `--method`; see the root README. String arrays must use a fixed Unicode dtype, not pickled Python objects. The archive represents one prepared partition, not a required universal dataset format.
-

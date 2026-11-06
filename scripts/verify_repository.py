@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import hashlib
+import re
 from pathlib import Path
 
 
@@ -23,12 +24,28 @@ def main():
     if missing:
         raise SystemExit(f"Missing required repository files: {missing}")
     manifest = ROOT / "figures/manuscript/SHA256SUMS"
-    for line in manifest.read_text(encoding="utf-8").splitlines():
+    manifest_lines = manifest.read_text(encoding="utf-8").splitlines()
+    if len(manifest_lines) != 7:
+        raise SystemExit(f"Expected 7 Figure 1--4 assets, found {len(manifest_lines)} manifest entries.")
+    manifest_paths = set()
+    for line in manifest_lines:
         expected, raw_path = line.split(maxsplit=1)
-        path = manifest.parent / raw_path.lstrip("*")
+        raw_path = raw_path.lstrip("*")
+        manifest_paths.add(raw_path)
+        path = manifest.parent / raw_path
         observed = hashlib.sha256(path.read_bytes()).hexdigest()
         if observed != expected:
             raise SystemExit(f"Checksum mismatch: {path}")
+    image_paths = {
+        str(path.relative_to(manifest.parent))
+        for path in manifest.parent.rglob("*.png")
+    }
+    if image_paths != manifest_paths:
+        raise SystemExit("Manuscript PNG files do not match the Figure 1--4 checksum manifest.")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    embedded = set(re.findall(r'<img src="figures/manuscript/([^"]+)"', readme))
+    if embedded != manifest_paths:
+        raise SystemExit("README image references do not match the seven packaged manuscript panels.")
     print("Repository integrity checks passed.")
 
 
