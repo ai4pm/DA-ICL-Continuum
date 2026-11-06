@@ -1,0 +1,19 @@
+result_root: results/synthetic_smoke
+n_train: 120
+n_test: 60
+n_features: 2
+n_neighbors: 20
+n_replicates: 2
+seed: 0
+admixed_fraction: 0.35
+clustered_noise: 0.055
+admixed_noise: 0.035
+beta_shape: 1.4
+logistic_scale: 8.0
+local_oracle_size: 20
+rotation_values: [0.0, 10.0]
+offset_values: [0.0, 1.0]
+distance_rotation: 10.0
+distance_offset: 0.0
+distance_bins: 5
+

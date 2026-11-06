@@ -1,0 +1,16 @@
+# Python 3.12.3; CUDA-enabled systems should install the matching PyTorch wheel.
+numpy==2.1.2
+pandas==2.3.1
+scipy==1.16.1
+scikit-learn==1.6.1
+networkx==3.3
+matplotlib==3.10.5
+seaborn==0.13.2
+PyYAML==6.0.2
+xgboost==3.2.0
+torch==2.6.0
+tabpfn==7.1.0
+huggingface-hub==0.30.2
+pytest==8.3.5
+pytest-cov==6.0.0
+

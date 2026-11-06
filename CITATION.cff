@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the BIBM paper."
+title: "BIBM DA-ICL Replication Repository"
+type: software
+version: 1.0.0
+date-released: 2026-11-05
+license: MIT
+authors:
+  - family-names: Li
+    given-names: Weizhi
+  - family-names: Cui
+    given-names: Yan
+preferred-citation:
+  type: conference-paper
+  authors:
+    - family-names: Li
+      given-names: Weizhi
+    - family-names: Cui
+      given-names: Yan
+  title: "Beyond Discrete Ancestry Groups: Distribution-Aware In-Context Learning for Cancer Outcome Prediction Across the Genetic Ancestry Continuum"
+  collection-title: "2026 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)"
+  publisher:
+    name: IEEE
+  year: 2026
+

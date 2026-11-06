@@ -1,0 +1,13 @@
+name: bibm-replication
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.12.3
+  - pip=25.0.1
+  - pytorch=2.6.0
+  - pytorch-cuda=12.4
+  - pip:
+      - -r requirements.txt
+

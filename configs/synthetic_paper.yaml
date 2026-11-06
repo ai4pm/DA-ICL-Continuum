@@ -1,0 +1,20 @@
+# Exact executable settings used for the manuscript's diagonal-boundary figures.
+result_root: results/synthetic
+n_train: 1000
+n_test: 600
+n_features: 2
+n_neighbors: 100
+n_replicates: 30
+seed: 0
+admixed_fraction: 0.35
+clustered_noise: 0.055
+admixed_noise: 0.035
+beta_shape: 1.4
+logistic_scale: 8.0
+local_oracle_size: 100
+rotation_values: [0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
+offset_values: [0.0, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0, 3.5, 4.0]
+distance_rotation: 10.0
+distance_offset: 0.0
+distance_bins: 5
+

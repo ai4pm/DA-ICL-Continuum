@@ -1,0 +1,13 @@
+# Reference settings for prepared TCGA arrays. This file does not acquire,
+# preprocess, split, or redistribute TCGA data.
+model: da-icl
+prediction_features: omics_pca100
+genetic_features: genotype_pca30
+dace_features: omics_ae20
+n_neighbors: 100
+n_estimators: 32
+temperature: 0.9
+device: cuda
+checkpoint_sha256: 0578fa56f97e11024e31735aaec2c4e7332584b7730242fbaf6c0bbd0299206a
+random_seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+
