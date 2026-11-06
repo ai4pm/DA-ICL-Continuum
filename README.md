@@ -180,7 +180,7 @@ This repository intentionally does not download or preprocess TCGA, construct ou
   <img src="figures/manuscript/tcga/hparam_afr_min_core_methods_tcga_budget30s_da_icl_auroc_boxplot.png" width="100%" alt="Run-level AUROC distributions across 18 TCGA tasks">
 </p>
 
-Run-level AUROC distributions compare DA-ICL for ancestry-continuum modeling with ancestry-discrete elastic net, random forest, and XGBoost across 18 TCGA tasks evaluated on AFR test samples. Higher AUROC is better. The de-identified run-level source is [data/figure_data/tcga_core_methods_run_level_auroc.csv](data/figure_data/tcga_core_methods_run_level_auroc.csv).
+Run-level AUROC distributions compare DA-ICL for ancestry-continuum modeling with ancestry-discrete elastic net, random forest, and XGBoost across 18 TCGA tasks evaluated on AFR test samples. Higher AUROC is better.
 
 ## Environment and runtime
 
@@ -198,7 +198,6 @@ jobs/                     CPU synthetic Slurm template
 tests/                    estimator, DACE, metric, and synthetic tests
 docs/                     algorithms, input contract, figures, environment, validation
 figures/manuscript/       canonical manuscript Figures 1–4
-data/figure_data/         de-identified aggregate data for Figure 4
 results/                  locally generated outputs (git-ignored)
 ```
 

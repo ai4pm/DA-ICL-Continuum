@@ -7,7 +7,7 @@ cd figures/manuscript
 sha256sum -c SHA256SUMS
 ```
 
-Newly generated synthetic figures are written beneath `results/<experiment>/figures/`. The TCGA aggregate table in `data/figure_data/` contains no patient identifiers or patient-level records.
+Newly generated synthetic figures are written beneath `results/<experiment>/figures/`.
 
 ## Figure 1: framework
 
@@ -54,4 +54,3 @@ Original caption: “Run-level AUROC distributions of DA-ICL for ancestry-contin
 - Methods: DA-ICL with continuum KNN100+DACE, and ancestry-discrete elastic net, random forest, and XGBoost.
 - Population/tasks: AFR test patients, 18 combinations of BRCA/KIRC/UCEC, OS/PFI, and mRNA/microRNA/methylation.
 - Metric: higher AUROC is better; points summarize split/run-level task performance, not individual patients.
-- Source: `data/figure_data/tcga_core_methods_run_level_auroc.csv`. The plotting entry point is `scripts/plot_tcga_aggregate_figures.py`.
